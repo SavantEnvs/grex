@@ -1,0 +1,14 @@
+project: srithon/grex-mayhem
+
+# Target name (should be unique within the project)
+target: grex-fuzz
+
+# List of commands used to test the target
+cmds:
+
+    # Command used to start the target, "@@" is the input file
+    # (when "@@" is omitted Mayhem defaults to stdin inputs)
+  - cmd: /bin/fuzz_builder -max_len=100
+    env: {}
+image: ghcr.io/srithon/grex-mayhem:main
+duration: 300
