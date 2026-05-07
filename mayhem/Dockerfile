@@ -1,12 +1,15 @@
 # Build Stage
-FROM ghcr.io/evanrichter/cargo-fuzz:latest AS builder
+FROM rustlang/rust:nightly AS builder
+
+RUN cargo install cargo-fuzz
 
 # Add source code to the build stage.
 ADD . /grex
 WORKDIR /grex
 
 # Compile the fuzzers.
-RUN cargo fuzz build
+# Delete the pinned Cargo.lock so cargo regenerates it with a compatible rustix version.
+RUN rm -f fuzz/Cargo.lock && cargo fuzz build
 
 # Package Stage
 FROM ubuntu:latest
