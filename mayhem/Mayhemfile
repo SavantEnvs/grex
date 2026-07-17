@@ -1,0 +1,10 @@
+project: savantenvs/grex
+
+# Preserves the fork's historical target name (grex-fuzz) so run history isn't orphaned.
+target: grex-fuzz
+
+cmds:
+  - cmd: /mayhem/fuzz_builder -max_len=100
+    env: {}
+
+duration: 1200
