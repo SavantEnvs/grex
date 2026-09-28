@@ -1,0 +1,9 @@
+project: savantenvs/grex
+
+target: grex-fuzz-buggy-mhh-run-4
+
+# origin: https://app.mayhem.security/mayhemheroes/grex/grex-fuzz/4
+
+cmds:
+  - cmd: /mayhem/fuzz_builder -max_len=100
+    env: {}
