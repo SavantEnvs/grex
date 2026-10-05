@@ -1,0 +1,6 @@
+# origin: https://app.mayhem.security/mayhemheroes/grex/grex-fuzz/4
+project: savantenvs/grex
+target: grex-fuzz-buggy-mhh-run-4
+cmds:
+  - cmd: /mayhem/fuzz_builder
+    libfuzzer: true
